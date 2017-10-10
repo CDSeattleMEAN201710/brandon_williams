@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mongooses</title>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="/">Home</a>
+      <a href="/mongooses/new">New Mongoose</a>
+    </div>
+    <div class="container">
+      <h2>Here are all the Mongooses!</h2>
+      <% for (animal of animals) { %>
+         <p>Name:<a href="/mongooses/<%= animal._id%>"><%= animal.name %></a></p>
+         <p>Type:<%= animal.type %></p>
+         <p>Age:<%= animal.age %></p>
+         <p>Color:<%= animal.color %></p>
+         <a href="/mongooses/edit/<%= animal._id%>">Edit <%= animal.name %></a>
+         <a href="/mongooses/destroy/<%= animal._id%>">Destroy <%= animal.name %></a>
+        <hr>
+      <% } %>
+    </div>
+  </body>
+</html>
