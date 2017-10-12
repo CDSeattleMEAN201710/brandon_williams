@@ -1,0 +1,37 @@
+div{
+  width:50px;
+  height:50px;
+  border: 1px dashed black;
+  display: inline-block;
+}
+
+.red{
+  background-color: red;
+}
+.green{
+  background-color: green;
+}
+.brown{
+  background-color: brown;
+}
+.beige{
+  background-color: beige;
+}
+.blue{
+  background-color: blue;
+}
+.yellow{
+  background-color: yellow;
+}
+.orange{
+  background-color: orange;
+}
+.aqua{
+  background-color: aqua;
+}
+.pink{
+  background-color: pink;
+}
+.olive{
+  background-color: olive;
+}
