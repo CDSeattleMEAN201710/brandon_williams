@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h1>Add A Quote</h1>
+
+<form #form="ngForm" (submit)=addQuote()>
+  <textarea required minlength='10' #text='ngModel' name="text" rows="3" cols="30"
+  [(ngModel)]='quote.text'></textarea><br>
+
+  Author: <input required minlength='5 '#author='ngModel'type="text" name="author" value=""
+  [(ngModel)]='quote.author'>
+
+  <input [disabled]="!form.valid" type="submit" name="" value="Add Quote">
+</form>
+
+<p>{{ quote | json }}</p>
+
+<hr>
+<app-quote-list [list_of_quotes]='list_of_quotes'></app-quote-list>
