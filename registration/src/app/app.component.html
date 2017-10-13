@@ -1,0 +1,90 @@
+<h2>Registration</h2>
+
+<div class="account_info">
+  <h3>Account Information</h3>
+  <form (submit)="createUser()">
+    *First Name<input
+      type="text"
+      name="first_name"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="new_user.first_name"
+      #first_name='ngModel'
+    /><div *ngIf="first_name.errors">First name invalid</div><br>
+    *Last Name<input
+      type="text"
+      name="last_name"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="new_user.last_name"
+      #last_name='ngModel'
+    /><div *ngIf="last_name.errors">Last name invalid</div><br>
+    *Email<input
+      type="text"
+      name="email"
+      required
+      minlength="4"
+      maxlength="24"
+      [(ngModel)]="new_user.email"
+      #email='ngModel'
+    /><div *ngIf="email.errors">Email invalid</div><br>
+    *Password<input
+      type="text"
+      name="password"
+      required
+      minlength="16"
+      pattern="^([a-zA-Z0-9@*#]{16,15})$"
+      [(ngModel)]="new_user.password"
+      #password='ngModel'
+    /><div *ngIf="password.errors">Password invalid</div><br>
+    *Password Confirmation<input
+      type="text"
+      name="password_confirm"
+      required
+      minlength="16"
+      pattern="^([a-zA-Z0-9@*#]{16,15})$"
+      [(ngModel)]="new_user.password_confirm"
+      #password_confirm='ngModel'
+    /><div *ngIf="password_confirm.errors">Password_confirm invalid</div><br>
+    *Street Address<input
+      type="text"
+      name="address"
+      required
+      [(ngModel)]="new_user.address"
+      #address='ngModel'
+    /><div *ngIf="address.errors">address invalid</div><br>
+    Unit/Apt#<input
+      type="text"
+      name="apt"
+      [(ngModel)]="new_user.apt"
+      #apt='ngModel'
+    /><br>
+    *City<input
+      type="text"
+      name="city"
+      required
+      [(ngModel)]="new_user.city"
+      #city='ngModel'
+    /><div *ngIf="city.errors">City invalid</div><br>
+    *State<input
+      type="text"
+      name="city"
+      required
+      maxlength="24"
+      [(ngModel)]="new_user.state"
+      #state='ngModel'
+    /><div *ngIf="state.errors">State invalid</div><br>
+    Are you Feeling Lucky?
+      Yes<input type="radio" name="lucky" value="Yes" [(ngModel)]="new_user.lucky" #lucky='ngModel' required>
+      No<input type="radio" name="lucky" value="No" [(ngModel)]="new_user.lucky" #lucky='ngModel'><br>
+
+    <p *ngIf="first_name.valid &&last_name.valid &&email.valid &&password.valid &&password_confirm.valid && address.valid &&
+    city.valid && state.valid && lucky.valid">
+      <input type="submit" name="" value="Register">
+    </p>
+  </form>
+</div>
+
+<p>{{msg}}</p>
