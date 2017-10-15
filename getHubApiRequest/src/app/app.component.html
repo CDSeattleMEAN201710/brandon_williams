@@ -1,0 +1,26 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="get_user">
+  <h1>Github Score</h1>
+  <form #form="ngForm"(submit)="calculate()" >
+    Github Username: <input required type="text" name="user" [(ngModel)]="user">
+    <input [disabled]="!form.valid" type="submit" name="submit" value="Calculate">
+  </form>
+</div>
+
+<div class="container">
+  <!-- Show nothing if user is null -->
+  <div *ngIf="userExists === null"></div>
+  <!-- Show an error msg if user doesn't exist -->
+  <div *ngIf="userExists === false">
+    <h3>User does not exist.</h3>
+  </div>
+  <!-- Display Score if user exist -->
+  <div *ngIf="userExists === true">
+    <h1>Your GetHubScore: {{score}}</h1>
+    <p *ngIf="score < 20">Needs Work!</p>
+    <p *ngIf="score >= 20 && score < 50">A decent start!</p>
+    <p *ngIf="score >= 50 && score < 100">Doing good!</p>
+    <p *ngIf="score >= 100 && score < 200">Great Job!</p>
+    <p *ngIf="score >= 200">Github Elite!</p>
+  </div>
+</div>
